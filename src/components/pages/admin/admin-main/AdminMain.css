@@ -1,0 +1,382 @@
+.nav-tabs .nav-link {
+    border: none;
+    color: #4B3D7E;
+}
+
+.nav-tabs .nav-link:hover {
+    filter: brightness(120%);
+}
+
+.nav-tabs .nav-link.active {
+    color: #4B3D7E;
+    filter: brightness(110%);
+}
+
+.tab-content {
+    background-color: #fff;
+    height: auto;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    box-shadow: 0px 10px 12px rgba(0, 0, 0, 0.07);
+}
+
+.title-row {
+    display: flex;
+    align-items: center;
+
+    padding: 20px;
+    padding-bottom: 0;
+}
+
+.title-row ion-icon {
+    font-size: 20px;
+    margin-right: 5px;
+    color: #4B3D7E;
+}
+
+.title-row h1 {
+    font-weight: bold;
+    font-size: 18px;
+    color: #4B3D7E;
+}
+
+.field-row {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 20px;
+    font-size: 15px;
+}
+
+.field-row button {
+    border: none;
+    outline: none;
+    width: 100px;
+    margin-bottom: 20px;
+    padding: 8px;
+    border-radius: 3px;
+    color: #fff;
+    background-color: #4B3D7E;
+    font-weight: 500;
+    transition: all 300ms ease-in-out;
+}
+
+.field-row button:hover {
+    transform: scale(105%);
+    filter: brightness(140%);
+}
+
+.field-row input,
+.field-row textarea,
+.field-row select {
+    /* border: none; */
+    outline: none;
+    border-radius: 3px;
+    color: gray;
+    font-style: italic;
+    transition: all 300ms ease-in-out;
+    border: 2px solid #4B3D7E;
+    border-top-left-radius: 0px;
+}
+
+.field-row.disabled input,
+.field-row.disabled textarea {
+    background-color: #d5d5d5;
+}
+
+.field-row.disabled input::placeholder,
+.field-row.disabled textarea::placeholder {
+    color: gray;
+}
+
+.field-row input {
+    padding: 5px;
+}
+
+.field-row select {
+    padding: 5px 2px;
+}
+
+.field-row textarea {
+    padding: 10px;
+}
+
+.field-row input:hover,
+.field-row input:focus {
+    transform: scale(101%);
+}
+
+.field-row textarea:hover,
+.field-row textarea:focus {
+    padding-left: 12px;
+}
+
+.field-row input:focus,
+.field-row textarea:focus,
+.field-row select:focus {
+    font-style: normal;
+}
+
+.field-row label {
+    width: fit-content;
+    background-color: #4B3D7E;
+    color: #fff;
+    padding: 8px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+textarea {
+    resize: none;
+}
+
+.first-row,
+.second-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.long {
+    font-size: 14px;
+}
+
+.first-row .field-row {
+    min-width: 45%;
+}
+
+.second-row .field-row {
+    min-width: 20%;
+}
+
+input[type="radio"] {
+    appearance: none;
+    background-color: #fff;
+    margin: 0;
+    font: inherit;
+    color: currentColor;
+    width: 1.15em;
+    height: 1.15em;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+input[type="radio"]:focus {
+    background-color: #7969A3;
+}
+
+.select-row,
+.select {
+    display: flex;
+    margin-top: 10px;
+}
+
+.select-row {
+    margin-right: 40px;
+}
+
+.select-row label {
+    margin-left: 10px;
+    margin-top: -7px;
+    border-radius: 15px;
+
+}
+
+.select .select-row label {
+    border-bottom: none;
+}
+
+.management-title {
+    display: flex;
+    margin: 20px;
+    margin-top: 0px;
+    cursor: pointer;
+    transition: all 100ms ease-in-out;
+}
+
+.management-title:hover {
+    filter: brightness(150%);
+}
+
+.management-title ion-icon {
+    margin-right: 10px;
+}
+
+.management, .management-user, .management-product, .management-client {
+    padding-bottom: 20px;
+    height: 35px;
+    overflow: hidden;
+    transition: all 200ms ease-in-out;
+}
+
+.management.active, .management-user.active, .management-product.active, .management-client.active {
+    height: auto;
+    transition: all 200ms ease-in-out;
+}
+
+.management.active .icon, .management-user.active .icon, .management-product.active .icon, .management-client.active .icon {
+    transition: all 200ms ease-in-out;
+    transform: rotate(90deg);
+    margin-top: 5px;
+    margin-right: 10px;
+}
+
+.table {
+    border-radius: 5px;
+    width: 90%;
+    margin: 0 auto;
+    overflow-x: scroll;
+}
+
+.table::-webkit-scrollbar {
+    height: 15px;
+} 
+  
+.table::-webkit-scrollbar-thumb {   
+    background-color: rgba(169, 169, 169, 0.3);   
+}
+
+.table table {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.table table  {
+    background-color: #60489E;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.table th {
+    border-bottom: 1px solid #fff;
+    color: #fff;
+    font-weight: bold;
+    background-color: #22263C;
+}
+
+.table th, .table td {
+    padding: 10px;
+    text-align: center;
+    vertical-align: middle;
+    word-wrap: break-word;
+    max-width: 100px;
+}
+
+.table .description-td {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: pre;
+}
+
+.table tr {
+    max-width: 100px;
+    border-bottom: 1px solid #8980a0;
+}
+
+.table tr:last-child {
+    border-bottom: none;
+}
+
+.table td {
+    font-weight: 300;
+    font-size: 16px;
+}
+
+.pagination {
+    display: flex;
+    align-items: center;
+    color: #fff;
+    margin: 20px 5%;
+}
+
+.page-item {
+    background-color: #7969A3;
+    padding: 10px;
+    font-size: 15px;
+    transition: all 200ms ease-in-out;
+}
+
+.page-item:first-child {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.page-item:first-child ion-icon {
+    transform: rotate(180deg);
+}
+
+.page-item:last-child {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.page-item:first-child:hover, .page-item:last-child:hover {
+    transform: scale(105%);
+}
+
+.page-item.page-selected {
+    filter: brightness(50%);
+}
+
+.edit-button {
+    outline: none;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    height: 35px;
+    width: 35px;
+    border-radius: 5px;
+    color: #4B3D7E;
+    background-color: #fff;
+    text-align: center;
+    transition: all 200ms ease-in-out;
+    border-right: 1px solid #fafafa;
+    border-bottom: 1px solid #fafafa;
+    /* box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.3); */
+}
+
+.edit-button:hover {
+    background-color: #4b3d7e;
+    color: #fff;
+    box-shadow: 8px 5px 0px rgb(70, 53, 129);
+}
+
+.field-row button.red {
+    background-color: #da3d3d;
+}
+
+.buttons {
+    display: flex;
+}
+
+.buttons .field-row.cancel {
+    margin-left: 0;
+}
+
+.buttons .field-row.cancel button {
+    background-color: gray;
+}
+
+.red {
+    color: #da3d3d;
+}
+
+@media screen and (max-width: 1150px) {
+    .first-row .field-row {
+        min-width: 93%;
+    }
+
+    .second-row .field-row {
+        min-width: 40%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    .second-row .field-row,
+    .first-row .field-row {
+        min-width: 90%;
+    }
+}

@@ -1,0 +1,36 @@
+.side-card {
+    display: flex;
+    align-items: center;
+
+    padding: 0 15px;
+    margin: 10px 0;
+    margin-bottom: 1px;
+    transition: all 200ms linear;
+    cursor: pointer;
+    font-size: 20px;
+    color: #e5e5e5;
+    width: 100%;
+    min-height: 40px; 
+}
+
+.side-card:hover {
+    border-left: 5px solid lightgray;
+    color: #fff;
+}
+
+.side-card ion-icon {
+    margin-top: -3px;
+    margin-right: 20px;
+    margin-left: 5px; 
+    min-width: 23px;
+    min-height: 23px;
+} 
+
+.side-card h1 {
+    width: 120px;
+}
+
+.link {
+    text-decoration: none;
+}
+

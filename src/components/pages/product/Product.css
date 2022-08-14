@@ -1,0 +1,46 @@
+.search-container {
+    display: flex;
+    width: 100%;
+}
+
+.search-products {
+    display: flex;
+    flex-direction: column;
+
+    margin: 10px 20px 20px 0px;
+    width: 40%;
+}
+
+.search-products input, .search-products select {
+    width: 100%;
+    padding: 5px;
+    outline: none;
+    border: 2px solid #4B3D7E;
+    border-radius: 5px;
+    border-top-left-radius: 0;
+    color: gray;
+}
+
+.search-products label {
+    width: fit-content;
+    background-color: #4B3D7E;
+    color: #fff;
+    padding: 8px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.search-products button {
+    padding: 9px;
+    border-radius: 5px;
+    border: 2px solid #4B3D7E;
+    background-color: #4B3D7E;
+    color: #fff;
+    margin-top: 30px;
+    transition: all 100ms ease-in-out;
+}
+
+.search-products button:hover {
+    background-color: #705bbe;
+    border: 2px solid #705bbe;
+}

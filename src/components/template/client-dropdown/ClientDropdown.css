@@ -1,0 +1,65 @@
+.client-dropdown {
+    background-color: #fff;
+    height: 40px;
+    border-radius: 7px;
+    box-shadow: 2px 1px 3px rgba(0, 0, 0, 0.15);
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    transition: all 400ms ease-in-out;
+}
+
+.client-name {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    cursor: pointer;
+    padding-bottom: 10px;
+    border-bottom: 1px solid lightgray;
+    transition: all 400ms ease-in-out;
+}
+
+.client-content {
+    display: flex;
+
+    margin-top: 10px;
+    height: 390px;
+    transition: all 400ms ease-in-out;
+}
+
+.other-infos {
+    display: none;
+    color: #60489E;
+    transition: all 400ms ease-in-out;
+}
+
+.other-infos strong {
+    font-weight: bold;
+}
+
+.other-infos p {
+    margin-left: 5px;
+}
+
+.client-dropdown.opened {
+    height: 500px;
+}
+
+.client-dropdown.opened .client-name ion-icon {
+    transform: rotate(90deg);
+}
+
+.client-dropdown ion-icon {
+    margin-right: 5px;
+    margin-top: 2px;
+    transition: all 400ms ease-in-out;
+}
+
+.client-dropdown.opened .other-infos {
+    display: flex;
+}
+
+.birthday-warning {
+    color: rgb(164, 47, 241);
+    margin-left: 5px;
+}

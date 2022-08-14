@@ -1,0 +1,33 @@
+footer {
+    width: 100%;
+    background-color: #222;
+}
+
+footer > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+
+    padding: 13px;
+    color: lightgray;
+    font-size: 15px;
+}
+
+footer .app-name {
+    font-style: italic;
+}
+
+strong {
+    filter: brightness(60%);
+}
+
+footer .copyright {
+    display: flex;
+    align-items: center;
+}
+
+footer .copyright ion-icon {
+    margin-left: 5px;
+    margin-top: 2px;
+}

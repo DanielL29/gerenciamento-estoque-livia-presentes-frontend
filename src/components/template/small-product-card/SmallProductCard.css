@@ -1,0 +1,85 @@
+.products .product {
+    width: 100%;
+    border-radius: 7px;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
+    margin-bottom: 10px;
+    word-wrap: break-word;
+}
+
+.products .product span {
+    display: inline-block;
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.product > div:first-child {
+    padding: 10px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.product > div:first-child h1, .product > div:first-child div {
+    margin-bottom: 10px;
+}
+
+.product > div:first-child div span {
+    padding-bottom: 2px;
+    margin-bottom: 5px;
+    border-bottom: 1px solid currentColor;
+}
+
+.product:last-child {
+    margin-bottom: 0;
+}
+
+.send-history {
+    align-self: flex-end;
+}
+
+.quantity {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+}
+
+.quantity div {
+    display: flex;
+}
+
+.quantity h4 {
+    padding-bottom: 2px;
+    margin-right: 5px;
+}
+
+.quantity p, .quantity h4 {
+    font-weight: bold;
+}
+
+.send-history button {
+    outline: none;
+    border: none;
+    padding: 7px;
+    width: 100%;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background-color: #60489E;
+    color: #fff;
+    font-size: 14px;
+}
+
+.send-history button:hover {
+    background-color: #7a5aca;
+}
+
+.quantity > div:last-child {
+    justify-content: space-between;
+
+    width: 65px;
+
+}
+
+.quantity button {
+    border-radius: 3px;
+    height: 30px;
+    width: 30px;
+}

@@ -1,0 +1,35 @@
+.home-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    height: 180px;
+    width: 300px;
+    background-color: #2D2C4E;
+    color: #e5e5e5;
+    border-radius: 5px;
+    margin-right: 30px;
+    margin-bottom: 30px;
+    box-shadow: 10px 8px 0px rgb(70, 53, 129);
+}
+
+.home-card div {
+    display: flex;
+    margin: 20px;
+    font-size: 30px;
+}
+
+.home-card ion-icon {
+    margin-right: 10px;
+}
+
+.home-card h2 {
+    align-self: flex-end;
+    margin: 20px;
+    font-weight: bold;
+    font-size: 40px;
+}
+
+.home-card span {
+    font-weight: 400;
+}
