@@ -7,7 +7,7 @@ Frontend React para o sistema de estoque da Livia Presentes.
 Copie `.env.example` para `.env` em desenvolvimento:
 
 ```env
-VITE_API_URL=http://localhost:4000
+VITE_API_URL=https://gerenciamento-estoque-livia-presentes.onrender.com
 ```
 
 Na Vercel, configure `VITE_API_URL` com a URL publica do backend no Render.
