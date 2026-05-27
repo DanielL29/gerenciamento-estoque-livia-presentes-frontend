@@ -7,10 +7,10 @@ export default function Header() {
         <header>
             <div>
                 <div className="logo">
-                    <img src="images/gitf.png" alt="gitf.png" />
+                    <img src="/images/gitf.png" alt="gitf.png" />
                 </div>
                 <div className="title">
-                    <img src="images/livia-presentes-logo.png" alt="livia-presentes" />
+                    <img src="/images/livia-presentes-logo.png" alt="livia-presentes" />
                 </div>
                 <div className="user">
                     <div className="perfil-photo">

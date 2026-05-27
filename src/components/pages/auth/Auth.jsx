@@ -61,7 +61,7 @@ export default function Auth() {
         <form onSubmit={!isSignIn ? signUp : signIn}>
             <div className="auth">
                 <div>
-                    <img src="./images/livia-presentes-logo.png" alt="logo" />
+                    <img src="/images/livia-presentes-logo.png" alt="logo" />
                     <div className="field">
                         <h1>{!isSignIn ? 'Cadastro' : 'Login'}</h1>
                     </div>
@@ -79,11 +79,13 @@ export default function Auth() {
                         <label>Senha</label>
                         <input type="password" placeholder="Senha do usuário" value={password} onChange={(e) => setPassword(e.target.value)} required />
                     </div>
-                    <div className="field">
-                        <label>Confirmação de senha</label>
-                        <input type="password" placeholder="Confirmação de senha do usuário" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} required />
-                        {!matchPassword ? <p className="red">Senhas não conferem</p> : ''}
-                    </div>
+                    {!isSignIn ? (
+                        <div className="field">
+                            <label>Confirmação de senha</label>
+                            <input type="password" placeholder="Confirmação de senha do usuário" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} required />
+                            {!matchPassword ? <p className="red">Senhas não conferem</p> : ''}
+                        </div>
+                    ) : ''}
                     <div className="field">
                         {!isSignIn ? <button>Cadastro</button> : <button>Login</button>}
                     </div>

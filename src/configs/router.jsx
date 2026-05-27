@@ -7,15 +7,17 @@ import Auth from '../components/pages/auth/Auth'
 
 export default function Router() {
     const user = JSON.parse(localStorage.getItem('currentUser'))
+    const isLoggedIn = localStorage.getItem('userKey') !== null && user?.user
+    const isAdmin = Boolean(user?.user?.admin)
 
     return (
         <Routes>
-            {localStorage.getItem('userKey') !== null ? (
+            {isLoggedIn ? (
                 <>
                     <Route path="/" element={<Home />} />
                     <Route path="/products" element={<Product />} />
-                    {user.user.admin ? <Route path="/admin" element={<AdminMain />} /> : ''}
-                    {user.user.admin ? <Route path="/histories" element={<History />} /> : ''}
+                    {isAdmin ? <Route path="/admin" element={<AdminMain />} /> : ''}
+                    {isAdmin ? <Route path="/histories" element={<History />} /> : ''}
                 </>
             ) : (
                 <Route path="/" element={<Auth />} />

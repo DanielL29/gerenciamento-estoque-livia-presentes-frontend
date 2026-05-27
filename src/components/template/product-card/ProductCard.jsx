@@ -12,7 +12,7 @@ export default function ProductCard(props) {
         <div className="product-container">
             <div className={`product-card ${!props.isHistory ? '' : 'no-description'}`}>
                 <div>
-                    <img src={`${props.imageUrl.startsWith('https://') ? props.imageUrl : 'images/default-image.jpg'}`} alt="default-product-img" />
+                    <img src={`${props.imageUrl.startsWith('https://') ? props.imageUrl : '/images/default-image.jpg'}`} alt="default-product-img" />
                 </div>
                 <div className="product">
                     <h1><span>Nome:</span><span className="invisible">i</span>{props.name}</h1>
