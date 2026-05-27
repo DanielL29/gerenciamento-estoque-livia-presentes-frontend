@@ -31,7 +31,7 @@ export default function AdminClients() {
         getClients()
         setObjectValues()
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [clients])
+    }, [])
 
     async function getClients() {
         const clientData = await axios.get(`${BASE_URL}/clients`)

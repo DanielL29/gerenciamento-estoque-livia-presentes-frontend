@@ -29,7 +29,7 @@ export default function Product() {
         getProductsNatura()
         getProductsAvon()
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [products])
+    }, [])
 
     async function getProducts() {
         const productsData = await axios.get(`${BASE_URL}/products`)

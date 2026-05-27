@@ -22,7 +22,7 @@ export default function AdminCategories() {
         getCategories()
         setObjectValues()
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [categories])
+    }, [])
 
     async function getCategories() {
         const categoryData = await axios.get(`${BASE_URL}/categories`)

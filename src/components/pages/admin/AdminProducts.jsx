@@ -34,7 +34,7 @@ export default function AdminProducts() {
         getProducts()
         setObjectValues()
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [products])
+    }, [])
 
     async function getCategories() {
         const categoryData = await axios.get(`${BASE_URL}/categories`)

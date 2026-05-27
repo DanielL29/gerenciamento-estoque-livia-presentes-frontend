@@ -19,7 +19,7 @@ export default function Home() {
         getClients()
         getHistories()
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [users, products, clients, histories, historiesData])
+    }, [])
 
     async function getUsers() {
         const usersData = await axios.get(`${BASE_URL}/users`)

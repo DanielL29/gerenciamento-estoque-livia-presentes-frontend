@@ -20,7 +20,7 @@ export default function AdminUsers() {
         getUsers()
         setObjectValues()
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [users])
+    }, [])
 
     async function getUsers() {
         const usersData = await axios.get(`${BASE_URL}/users`)

@@ -22,7 +22,7 @@ export default function History() {
         getClients()
         getCategories()
         getHistories()
-    }, [products])
+    }, [])
 
     async function getProducts() {
         const productsData = await axios.get(`${BASE_URL}/products`)
