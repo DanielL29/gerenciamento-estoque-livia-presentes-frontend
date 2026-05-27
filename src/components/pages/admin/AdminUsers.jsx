@@ -74,8 +74,23 @@ export default function AdminUsers() {
         setValidate(true)
         console.log(userObject)
         if(!validateFields) {
+            const payload = userObject._id ? {
+                _id: userObject._id,
+                name,
+                email,
+                password,
+                confirmPassword,
+                admin
+            } : {
+                name,
+                email,
+                password,
+                confirmPassword,
+                admin
+            }
             const method = userObject._id ? 'put' : 'post'
-            const promise = axios[method](`${BASE_URL}/users/${method === 'put' ? userObject._id : ''}`, userObject)
+            const url = `${BASE_URL}/users/${method === 'put' ? userObject._id : ''}`
+            const promise = axios[method](url, payload)
             promise.then(resetUser)
             promise.catch(res => console.log(res.response))
         }

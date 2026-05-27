@@ -121,20 +121,39 @@ export default function AdminProducts() {
 
     function saveProduct() {
         setValidate(true)
-        let product = productObject
-        if(product.imageUrl === "" && product.description === "") {
-            product.imageUrl = " "
-            product.description = " "
-        } else if(product.imageUrl === "") {
-            product.imageUrl = " "
-        } else if(product.description === "") {
-            product.description = " "
-        } else {
-            product.imageUrl = product.imageUrl.trim()
+        setValidate(true)
+        // Build payload from current state values to avoid stale productObject
+        const payload = {
+            name,
+            imageUrl,
+            product,
+            productType,
+            content,
+            quantity,
+            description,
+            validity,
+            price,
+            isRefil,
+            refilWarning,
+            categoryId
         }
+
+        // sanitize optional fields
+        if (payload.imageUrl === "" && payload.description === "") {
+            payload.imageUrl = " "
+            payload.description = " "
+        } else if (payload.imageUrl === "") {
+            payload.imageUrl = " "
+        } else if (payload.description === "") {
+            payload.description = " "
+        } else {
+            payload.imageUrl = String(payload.imageUrl).trim()
+        }
+
         if (!validateFields) {
             const method = productObject._id ? 'put' : 'post'
-            const promise = axios[method](`${BASE_URL}/products/${method === 'put' ? product._id : ''}`, product)
+            const url = `${BASE_URL}/products/${method === 'put' ? productObject._id : ''}`
+            const promise = axios[method](url, payload)
             promise.then(resetProduct)
             promise.catch(res => console.log(res.response))
         }

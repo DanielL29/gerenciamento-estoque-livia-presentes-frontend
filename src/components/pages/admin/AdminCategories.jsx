@@ -66,8 +66,17 @@ export default function AdminCategories() {
         setValidate(true)
         console.log(categoryObject)
         if(!validateFields) {
+            const payload = categoryObject._id ? {
+                _id: categoryObject._id,
+                name,
+                parentId: parentId === "null" ? null : parentId
+            } : {
+                name,
+                parentId: parentId === "null" ? null : parentId
+            }
             const method = categoryObject._id ? 'put' : 'post'
-            const promise = axios[method](`${BASE_URL}/categories/${method === 'put' ? categoryObject._id : ''}`, categoryObject)
+            const url = `${BASE_URL}/categories/${method === 'put' ? categoryObject._id : ''}`
+            const promise = axios[method](url, payload)
             promise.then(resetCategory)
             promise.catch(res => console.log(res.response))
         }

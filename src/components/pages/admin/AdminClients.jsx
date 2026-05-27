@@ -88,8 +88,23 @@ export default function AdminClients() {
     function saveClient() {
         setValidate(true)
         if(!validateFields) {
+            const payload = clientObject._id ? {
+                _id: clientObject._id,
+                name,
+                cpf,
+                address,
+                cep,
+                birthday
+            } : {
+                name,
+                cpf,
+                address,
+                cep,
+                birthday
+            }
             const method = clientObject._id ? 'put' : 'post'
-            const promise = axios[method](`${BASE_URL}/clients/${method === 'put' ? clientObject._id : ''}`, clientObject)
+            const url = `${BASE_URL}/clients/${method === 'put' ? clientObject._id : ''}`
+            const promise = axios[method](url, payload)
             promise.then(resetClient)
             promise.catch((res) => console.log(res.response))
         }
