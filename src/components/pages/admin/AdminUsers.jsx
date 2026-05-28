@@ -91,15 +91,22 @@ export default function AdminUsers() {
             const method = userObject._id ? 'put' : 'post'
             const url = `${BASE_URL}/users/${method === 'put' ? userObject._id : ''}`
             const promise = axios[method](url, payload)
-            promise.then(resetUser)
+            promise.then(() => {
+                resetUser()
+                getUsers()
+            })
             promise.catch(res => console.log(res.response))
         }
     }
 
     function deleteUser() {
-        axios.delete(`${BASE_URL}/users/${userObject._id}`)
-        resetUser()
-        setMode('')
+        const promise = axios.delete(`${BASE_URL}/users/${userObject._id}`)
+        promise.then(() => {
+            resetUser()
+            setMode('')
+            getUsers()
+        })
+        promise.catch(res => console.log(res.response))
     }
 
     function loadUsers() {

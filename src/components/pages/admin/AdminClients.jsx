@@ -105,15 +105,22 @@ export default function AdminClients() {
             const method = clientObject._id ? 'put' : 'post'
             const url = `${BASE_URL}/clients/${method === 'put' ? clientObject._id : ''}`
             const promise = axios[method](url, payload)
-            promise.then(resetClient)
+            promise.then(() => {
+                resetClient()
+                getClients()
+            })
             promise.catch((res) => console.log(res.response))
         }
     }
 
     function deleteClient() {
-        axios.delete(`${BASE_URL}/clients/${clientObject._id}`)
-        resetClient()
-        setMode('')
+        const promise = axios.delete(`${BASE_URL}/clients/${clientObject._id}`)
+        promise.then(() => {
+            resetClient()
+            setMode('')
+            getClients()
+        })
+        promise.catch((res) => console.log(res.response))
     }
 
     async function loadClient(client, mode = '') {

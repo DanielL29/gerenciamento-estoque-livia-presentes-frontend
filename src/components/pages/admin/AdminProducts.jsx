@@ -154,15 +154,22 @@ export default function AdminProducts() {
             const method = productObject._id ? 'put' : 'post'
             const url = `${BASE_URL}/products/${method === 'put' ? productObject._id : ''}`
             const promise = axios[method](url, payload)
-            promise.then(resetProduct)
+            promise.then(() => {
+                resetProduct()
+                getProducts()
+            })
             promise.catch(res => console.log(res.response))
         }
     }
 
     function deleteProduct() {
-        axios.delete(`${BASE_URL}/products/${productObject._id}`).catch(res => console.log(res.response))
-        resetProduct()
-        setMode('')
+        const promise = axios.delete(`${BASE_URL}/products/${productObject._id}`)
+        promise.then(() => {
+            resetProduct()
+            setMode('')
+            getProducts()
+        })
+        promise.catch(res => console.log(res.response))
     }
 
     function loadCategories() {

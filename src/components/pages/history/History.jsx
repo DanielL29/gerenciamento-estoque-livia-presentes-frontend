@@ -79,7 +79,9 @@ export default function History() {
         }
 
         const promise = axios.post(`${BASE_URL}/histories`, history)
-        promise.then(updateQuantity(product, counter))
+        promise.then(() => {
+            updateQuantity(product, counter)
+        })
         promise.catch(res => console.log(res.response.data))
     }
 
@@ -88,7 +90,10 @@ export default function History() {
         prodObject.quantity = prodObject.quantity - counter
 
         const promise = axios.put(`${BASE_URL}/products/${product._id}`, prodObject)
-        promise.then(res => console.log(res.status))
+        promise.then(() => {
+            getHistories()
+            getProducts()
+        })
         promise.catch(res => console.log(res.response.data))
     }
 
@@ -97,12 +102,19 @@ export default function History() {
         historyObject.confirmPayment = !historyObject.confirmPayment
 
         const promise = axios.put(`${BASE_URL}/histories/${history._id}`, historyObject)
-        promise.then(res => console.log(res.status))
+        promise.then(() => {
+            getHistories()
+        })
         promise.catch(res => console.log(res.response.data))
     }
 
     function deleteProdHistory(history) {
-        axios.delete(`${BASE_URL}/histories/${history._id}`)
+        const promise = axios.delete(`${BASE_URL}/histories/${history._id}`)
+        promise.then(() => {
+            getHistories()
+            getProducts()
+        })
+        promise.catch(res => console.log(res.response.data))
     }
 
     function loadClientDropdown() {

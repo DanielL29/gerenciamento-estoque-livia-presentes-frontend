@@ -77,15 +77,22 @@ export default function AdminCategories() {
             const method = categoryObject._id ? 'put' : 'post'
             const url = `${BASE_URL}/categories/${method === 'put' ? categoryObject._id : ''}`
             const promise = axios[method](url, payload)
-            promise.then(resetCategory)
+            promise.then(() => {
+                resetCategory()
+                getCategories()
+            })
             promise.catch(res => console.log(res.response))
         }
     }
 
     function deleteCategory() {
-        axios.delete(`${BASE_URL}/categories/${categoryObject._id}`).catch(res => console.log(res.response.data))
-        resetCategory()
-        setMode('')
+        const promise = axios.delete(`${BASE_URL}/categories/${categoryObject._id}`)
+        promise.then(() => {
+            resetCategory()
+            setMode('')
+            getCategories()
+        })
+        promise.catch(res => console.log(res.response.data))
     }
 
     function loadCategoriesWithPath() {
