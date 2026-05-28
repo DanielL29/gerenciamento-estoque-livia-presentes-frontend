@@ -21,6 +21,12 @@ export default function Home() {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
+    // Calculate billing whenever historiesData changes
+    useEffect(() => {
+        getMonthBilling()
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [historiesData])
+
     async function getUsers() {
         const usersData = await axios.get(`${BASE_URL}/users`)
         setUsers(usersData.data.length)
@@ -40,7 +46,6 @@ export default function Home() {
         const historiesData = await axios.get(`${BASE_URL}/histories`)
         setHistories(historiesData.data.length)
         setHistoriesData(historiesData.data)
-        getMonthBilling()
     }
 
     function getMonthBilling() {
